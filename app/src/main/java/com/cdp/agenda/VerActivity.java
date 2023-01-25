@@ -30,9 +30,9 @@ public class VerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ver);
 
         txtNombre = findViewById(R.id.txtNombre);
-        txtraza = findViewById(R.id.txtRazaed);
-        txtedad= findViewById(R.id.txtedad1);
-        txttamano= findViewById(R.id.txttamano);
+        txtraza = findViewById(R.id.txtedRaza);
+        txtedad= findViewById(R.id.txtedad);
+        txttamano= findViewById(R.id.txteditamano);
         fabEditar = findViewById(R.id.fabEditar);
         fabEliminar = findViewById(R.id.fabEliminar);
         btnGuarda = findViewById(R.id.btnGuarda);
@@ -43,10 +43,10 @@ public class VerActivity extends AppCompatActivity {
             if(extras == null){
                 id = Integer.parseInt(null);
             } else {
-                id = extras.getInt("ID");
+                id = extras.getInt("codigo");
             }
         } else {
-            id = (int) savedInstanceState.getSerializable("ID");
+            id = (int) savedInstanceState.getSerializable("codigo");
         }
 
         final DbPaciente dbContactos = new DbPaciente(VerActivity.this);
@@ -82,7 +82,7 @@ public class VerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(VerActivity.this);
-                builder.setMessage("¿Desea eliminar este contacto?")
+                builder.setMessage("¿Desea eliminar este Paciente?")
                         .setPositiveButton("SI", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {

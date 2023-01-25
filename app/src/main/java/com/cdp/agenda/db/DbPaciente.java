@@ -21,8 +21,9 @@ public class DbPaciente extends DbHelperpaciente {
         this.context = context;
     }
 
-    public long insertarContacto(String raza, int edad, String nombre,String tamano , String datosmedicos) {
-
+    public long insertarContacto(String nombre, int edad, String raza,String tamano , String datosmedicos) {
+     //   txtNombre.getText().toString(),Integer.valueOf(txtedad.getText().toString()),txtraza.getText().toString(),
+        //        txttamano.getText().toString(),txtdatosmedicos.getText().toString()
         long id = 0;
 
         try {
@@ -30,9 +31,9 @@ public class DbPaciente extends DbHelperpaciente {
             SQLiteDatabase db = dbHelper.getWritableDatabase();
 
             ContentValues values = new ContentValues();
+            values.put("nombre", nombre);
             values.put("raza", raza);
             values.put("edad", edad);
-            values.put("nombre", nombre);
             values.put("tamano",tamano);
             values.put("datosmedicos",datosmedicos);
 
@@ -58,11 +59,7 @@ public class DbPaciente extends DbHelperpaciente {
         if (cursorpacientes.moveToFirst()) {
             do {
                 paciente = new Paciente();
-//                paciente.setId(cursorContactos.getInt(0));
-//                paciente.setNombre(cursorContactos.getString(1));
-//                paciente.setTelefono(cursorContactos.getString(2));
-//                paciente.setCorreo_electornico(cursorContactos.getString(3));
-//                listaContactos.add(contacto);
+
                 paciente.setCondigo(cursorpacientes.getInt(0));
                 paciente.setRaza(cursorpacientes.getString(1));
                 paciente.setEdad(cursorpacientes.getInt(2));
@@ -88,14 +85,11 @@ public class DbPaciente extends DbHelperpaciente {
         Paciente paciente = null;
         Cursor cursorPacientes;
 
-        cursorPacientes = db.rawQuery("SELECT * FROM " + TABLE_PACIENTES + " WHERE id = " + id + " LIMIT 1", null);
+        cursorPacientes = db.rawQuery("SELECT * FROM " + TABLE_PACIENTES + " WHERE codigo = " + id + " LIMIT 1", null);
 
         if (cursorPacientes.moveToFirst()) {
             paciente = new Paciente();
-//            contacto.setId(cursorContactos.getInt(0));
-//            contacto.setNombre(cursorContactos.getString(1));
-//            contacto.setTelefono(cursorContactos.getString(2));
-//            contacto.setCorreo_electornico(cursorContactos.getString(3));
+
             paciente.setCondigo(cursorPacientes.getInt(0));
             paciente.setRaza(cursorPacientes.getString(1));
             paciente.setEdad(cursorPacientes.getInt(2));

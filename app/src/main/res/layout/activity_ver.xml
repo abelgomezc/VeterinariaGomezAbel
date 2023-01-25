@@ -31,31 +31,53 @@
             android:id="@+id/viewEdad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/hint_telefono" />
+            android:text="@string/hint_edad" />
 
         <EditText
             android:id="@+id/txtedad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="phone"
-            android:labelFor="@+id/viewEdad"
-            android:textSize="18sp" />
+            android:inputType="textPersonName" />
 
         <TextView
             android:id="@+id/viewDatosmedicos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/hint_correo_electronico" />
+            android:text="@string/hint_datosmedicos" />
 
         <EditText
-            android:id="@+id/txtdatosmedicos"
+            android:id="@+id/txteditdatosmedicos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textEmailAddress"
-            android:labelFor="@+id/viewDatosmedicos"
-            android:textSize="18sp" />
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/viewraza"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hint_raza" />
+
+        <EditText
+            android:id="@+id/txtedRaza"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/viewTamano1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hint_tamano" />
+
+        <EditText
+            android:id="@+id/txteditamano"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName" />
 
         <Button
             android:id="@+id/btnGuarda"

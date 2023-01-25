@@ -41,6 +41,8 @@ public class ListaPacientesAdapter extends RecyclerView.Adapter<ListaPacientesAd
 
     @Override
     public void onBindViewHolder(@NonNull ContactoViewHolder holder, int position) {
+
+
       holder.viewNraza.setText(listaPacientess.get(position).getRaza());
 
       holder.viewedad.setText(String.valueOf(listaPacientess.get(position).getEdad()));
@@ -52,6 +54,8 @@ public class ListaPacientesAdapter extends RecyclerView.Adapter<ListaPacientesAd
     }
 
     public void filtrado(final String txtBuscar) {
+
+        //fitrado1
         int longitud = txtBuscar.length();
         if (longitud == 0) {
             listaPacientess.clear();

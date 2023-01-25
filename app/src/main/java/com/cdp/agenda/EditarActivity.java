@@ -31,10 +31,10 @@ EditText  txtraza,txtNombre, txtedad, txttamano,txtdatosmedicos;
         setContentView(R.layout.activity_ver);
 
         txtNombre = findViewById(R.id.txtNombre);
-        txtraza = findViewById(R.id.txtRazaed);
-        txtedad= findViewById(R.id.txtedad1);
-        txttamano= findViewById(R.id.txttamano);
-        txtdatosmedicos = findViewById(R.id.txtDatosMedicos);
+        txtraza = findViewById(R.id.txtedRaza);
+        txtedad= findViewById(R.id.txtedad);
+        txttamano= findViewById(R.id.txteditamano);
+        txtdatosmedicos = findViewById(R.id.txteditdatosmedicos);
 
         btnGuarda = findViewById(R.id.btnGuarda);
         fabEditar = findViewById(R.id.fabEditar);
@@ -47,10 +47,10 @@ EditText  txtraza,txtNombre, txtedad, txttamano,txtdatosmedicos;
             if (extras == null) {
                 id = Integer.parseInt(null);
             } else {
-                id = extras.getInt("ID");
+                id = extras.getInt("codigo");
             }
         } else {
-            id = (int) savedInstanceState.getSerializable("ID");
+            id = (int) savedInstanceState.getSerializable("codigo");
         }
 
         final DbPaciente dbContactos = new DbPaciente(EditarActivity.this);
