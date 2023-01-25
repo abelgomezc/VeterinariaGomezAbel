@@ -31,7 +31,7 @@ public class NuevoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if(!txtNombre.getText().toString().equals("") && !txttamano.getText().toString().equals("")) {
+                if(!txtdatosmedicos.getText().toString().equals("") && !txttamano.getText().toString().equals("")) {
 
                     DbPaciente dbPaciente = new DbPaciente(NuevoActivity.this);
                     long id = dbPaciente.insertarContacto( txtNombre.getText().toString(),Integer.valueOf(txtedad.getText().toString()),txtraza.getText().toString(),txttamano.getText().toString(),txtdatosmedicos.getText().toString());

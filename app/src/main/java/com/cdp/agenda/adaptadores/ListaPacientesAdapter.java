@@ -41,6 +41,8 @@ public class ListaPacientesAdapter extends RecyclerView.Adapter<ListaPacientesAd
 
     @Override
     public void onBindViewHolder(@NonNull ContactoViewHolder holder, int position) {
+
+
       holder.viewNraza.setText(listaPacientess.get(position).getRaza());
 
       holder.viewedad.setText(String.valueOf(listaPacientess.get(position).getEdad()));
