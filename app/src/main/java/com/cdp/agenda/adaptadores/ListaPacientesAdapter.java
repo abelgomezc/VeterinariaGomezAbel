@@ -54,6 +54,8 @@ public class ListaPacientesAdapter extends RecyclerView.Adapter<ListaPacientesAd
     }
 
     public void filtrado(final String txtBuscar) {
+
+        //fitrado
         int longitud = txtBuscar.length();
         if (longitud == 0) {
             listaPacientess.clear();
